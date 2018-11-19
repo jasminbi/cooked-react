@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import '../styles/app.css';
+import Recipe from './Recipe';
+import Navigation from './Navigation';
 
 class App extends Component {
     constructor (props) {
         super(props);
-
+        this.selectNewRecipe = this.selectNewRecipe.bind(this);
         this.state = {
             recipes: [
                 {
@@ -36,15 +38,47 @@ class App extends Component {
                     id: 'pizza'
                 },
             ],
+            selectedRecipe: null
         }
+    }
 
+    selectNewRecipe(recipeId) {
+        if(recipeId) {
+            this.setState({
+                ...this.state,
+                selectedRecipe: recipeId
+            });
+        }
     }
 
     render() {
+        let recipeToSelect;
+        if(this.state.selectedRecipe) {
+            const filteredRecipes = this.state.recipes.filter((recipe) => recipe.id === this.state.selectedRecipe);
+            if(filteredRecipes.length > 0) {
+                recipeToSelect = filteredRecipes[0];
+            }
+        }
         return (
-            
-            <div className="App">
-                <h1>This is my app title</h1>
+            <div className="app">
+                <aside className='sidebar'>
+                <h1 className='sidebar__title'>Recipe Book</h1>
+                <Navigation
+                    recipes={this.state.recipes}
+                    activeRecipe={this.state.selectedRecipe}
+                    recipeToSelect={this.selectNewRecipe}
+                    />
+                </aside>
+                {
+                    recipeToSelect ?
+                    <Recipe 
+                    ingredients={recipeToSelect.ingredients}
+                    steps={recipeToSelect.steps}
+                    title={recipeToSelect.title}
+                    />
+                    :
+                    null
+                }
             </div>
         );
     }
