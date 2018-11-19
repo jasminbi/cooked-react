@@ -14,7 +14,7 @@ class Recipe extends Component {
                 <ul className="Recipe__ingredients">
                     {ingredients}
                 </ul>
-                <h3 className="Recipe_sub-title">Steps</h3>
+                <h3 className="Recipe__sub-title">Steps</h3>
                 <ol className="Recipe_steps">
                     {steps}
                 </ol>

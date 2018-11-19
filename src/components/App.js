@@ -62,7 +62,7 @@ class App extends Component {
         return (
             <div className="app">
                 <aside className='sidebar'>
-                <h1 className='sidebar__title'>Recipe Book</h1>
+                <h1 className='sidebar__title'>c o o k e d</h1>
                 <Navigation
                     recipes={this.state.recipes}
                     activeRecipe={this.state.selectedRecipe}
