@@ -82,6 +82,13 @@ class App extends Component {
             </div>
         );
     }
+    componentDidMount() {
+        const recipeToShow = this.state.recipes[0].id || null;
+        this.setState({
+            ...this.state,
+            selectedRecipe: recipeToShow
+        });
+    }
 }
 
 export default App;
