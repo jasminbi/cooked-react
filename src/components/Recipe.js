@@ -10,11 +10,11 @@ class Recipe extends Component {
         return (
             <div className="Recipe">
                 <h2 className="Recipe__title">{this.props.title}</h2>
-                <h3 className="Recipe__sub-title">Ingredients</h3>
+                <h3 className="Recipe__sub-title">Zutaten</h3>
                 <ul className="Recipe__ingredients">
                     {ingredients}
                 </ul>
-                <h3 className="Recipe__sub-title">Steps</h3>
+                <h3 className="Recipe__sub-title">Anleitung</h3>
                 <ol className="Recipe_steps">
                     {steps}
                 </ol>

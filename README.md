@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Got started with Emma Wedekinds [Tutorial for React Beginners](https://levelup.gitconnected.com/building-a-recipe-book-in-react-part-1-c05b3e53cbb1)
+
 ## Available Scripts
 
 In the project directory, you can run:
